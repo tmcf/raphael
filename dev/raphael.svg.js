@@ -474,9 +474,6 @@
                         }
                         break;
                     case "stroke-width":
-                        if (o._.sx != 1 || o._.sy != 1) {
-                            value /= mmax(abs(o._.sx), abs(o._.sy)) || 1;
-                        }
                         node.setAttribute(att, value);
                         if (attrs["stroke-dasharray"]) {
                             addDashes(o, attrs["stroke-dasharray"], params);
@@ -863,11 +860,6 @@
         this.clip && $(this.clip, {transform: this.matrix.invert()});
         this.pattern && updatePosition(this);
         this.node && $(this.node, {transform: this.matrix});
-
-        if (_.sx != 1 || _.sy != 1) {
-            var sw = this.attrs[has]("stroke-width") ? this.attrs["stroke-width"] : 1;
-            this.attr({"stroke-width": sw});
-        }
 
         //Reduce transform string
         _.transform = this.matrix.toTransformString();
@@ -1335,13 +1327,6 @@
             viewBox: vb,
             preserveAspectRatio: aspectRatio
         });
-        while (size && top) {
-            sw = "stroke-width" in top.attrs ? top.attrs["stroke-width"] : 1;
-            top.attr({"stroke-width": sw});
-            top._.dirty = 1;
-            top._.dirtyT = 1;
-            top = top.prev;
-        }
         this._viewBox = [x, y, w, h, !!fit];
         return this;
     };
