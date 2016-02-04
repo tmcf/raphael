@@ -1,4 +1,7 @@
 # Raphaël: Cross-browser vector graphics the easy way.
+## Development fork with test patches applied
+
+If you need a stable release please visit the original repo [https://github.com/DmitryBaranovskiy/raphael.git]
 
 Visit the library website for more information: [http://raphaeljs.com](http://raphaeljs.com/)
 
@@ -6,7 +9,7 @@ Visit the library website for more information: [http://raphaeljs.com](http://ra
 
 You need to have NPM installed to build the library.
 
-* `git clone https://github.com/DmitryBaranovskiy/raphael.git`
+* `git clone https://github.com/tmcf/raphael.git`
 * `npm install && ./node_modules/grunt-cli/bin/grunt` or just `npm install && grunt` if you have grunt already installed
 
 ## Dependencies
